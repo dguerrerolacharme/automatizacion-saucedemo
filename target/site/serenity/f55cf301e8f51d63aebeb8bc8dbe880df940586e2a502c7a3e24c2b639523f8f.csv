@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login en SauceDemo","Login exitoso","SUCCESS","2026-05-02T11:56:49.4125877-05:00[America/Bogota]","0.0","8.4"
+"Login en SauceDemo","Login fallido","SUCCESS","2026-05-02T11:56:58.1084336-05:00[America/Bogota]","0.0","5.23"

@@ -10,6 +10,8 @@ import com.davidgl.qa.questions.ValidarLoginExitoso;
 import com.davidgl.qa.questions.ValidarErrorLogin;
 import com.davidgl.qa.questions.ValidarListaProductos;
 import com.davidgl.qa.questions.ValidarInfoProductos;
+import com.davidgl.qa.tasks.Filtrar;
+import com.davidgl.qa.questions.ValidarOrdenPrecios;
 
 import static org.junit.Assert.assertTrue;
 
@@ -69,6 +71,20 @@ public class LoginStepDefinition {
     public void validarNombreYPrecio() {
         assertTrue(
                 Hooks.actor.asksFor(ValidarInfoProductos.correcta())
+        );
+    }
+
+    @When("ordena productos por precio ascendente")
+    public void ordenarProductos() {
+        Hooks.actor.attemptsTo(
+                Filtrar.por("lohi")
+        );
+    }
+
+    @Then("los productos deben estar ordenados de menor a mayor")
+    public void validarOrden() {
+        assertTrue(
+                Hooks.actor.asksFor(ValidarOrdenPrecios.correcto())
         );
     }
 }

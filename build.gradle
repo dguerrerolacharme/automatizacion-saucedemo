@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '3.9.8'
+}
+
+group 'co.com.tuempresa'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityVersion = '3.9.8'
+    junitVersion = '4.13.2'
+}
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-core:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-junit:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:$serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$serenityVersion"
+
+    testImplementation "junit:junit:$junitVersion"
+}
+
+test {
+    testLogging.showStandardStreams = true
+}
+
+gradle.startParameter.continueOnFailure = true

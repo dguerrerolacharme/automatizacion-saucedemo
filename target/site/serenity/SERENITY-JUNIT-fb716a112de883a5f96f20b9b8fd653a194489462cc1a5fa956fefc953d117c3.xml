@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Gestion de productos" skipped="0" tests="2" time="5.91" timestamp="2026-05-02 04:12:55"><testcase name="Visualizar lista de productos"/><testcase name="Validar que los productos tienen nombre y precio"/></testsuite>

@@ -19,4 +19,19 @@ public class InventoryPage {
 
     public static final Target FILTER = Target.the("filtro de productos")
             .located(By.className("product_sort_container"));
+
+    public static final Target ADD_TO_CART = Target.the("boton agregar al carrito")
+            .located(By.xpath("(//button[contains(text(),'Add to cart')])[1]"));
+
+    public static final Target REMOVE_BUTTON = Target.the("boton remover")
+            .located(By.xpath("(//button[contains(text(),'Remove')])[1]"));
+
+    public static final Target CART_ICON = Target.the("icono carrito")
+            .located(By.className("shopping_cart_link"));
+
+    public static final Target CART_ITEMS = Target.the("productos en carrito")
+            .located(By.className("cart_item"));
+
+    public static final Target CART_BADGE = Target.the("contador carrito")
+            .located(By.className("shopping_cart_badge"));
 }

@@ -8,6 +8,8 @@ import com.davidgl.qa.tasks.AbrirPagina;
 import com.davidgl.qa.tasks.Login;
 import com.davidgl.qa.questions.ValidarLoginExitoso;
 import com.davidgl.qa.questions.ValidarErrorLogin;
+import com.davidgl.qa.questions.ValidarListaProductos;
+import com.davidgl.qa.questions.ValidarInfoProductos;
 
 import static org.junit.Assert.assertTrue;
 
@@ -17,6 +19,14 @@ public class LoginStepDefinition {
     public void abrirApp() {
         Hooks.actor.attemptsTo(
                 AbrirPagina.enSauceDemo()
+        );
+    }
+
+    @Given("que el usuario inicia sesion correctamente")
+    public void usuarioIniciaSesionCorrectamente() {
+        Hooks.actor.attemptsTo(
+                AbrirPagina.enSauceDemo(),
+                Login.conCredenciales("standard_user", "secret_sauce")
         );
     }
 
@@ -48,4 +58,17 @@ public class LoginStepDefinition {
         );
     }
 
+    @Then("deberia ver la lista de productos")
+    public void validarListaProductos() {
+        assertTrue(
+                Hooks.actor.asksFor(ValidarListaProductos.visible())
+        );
+    }
+
+    @Then("cada producto debe tener nombre y precio")
+    public void validarNombreYPrecio() {
+        assertTrue(
+                Hooks.actor.asksFor(ValidarInfoProductos.correcta())
+        );
+    }
 }

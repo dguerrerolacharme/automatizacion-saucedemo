@@ -1,1 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Login en SauceDemo" skipped="0" tests="2" time="13.62" timestamp="2026-05-02 11:56:49"><testcase name="Login exitoso"/><testcase name="Login fallido"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Login en SauceDemo" skipped="0" tests="2" time="10.73" timestamp="2026-05-02 01:26:24"><testcase name="Login exitoso"/><testcase name="Login fallido"/></testsuite>
